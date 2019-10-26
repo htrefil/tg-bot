@@ -11,7 +11,7 @@ use std::path::PathBuf;
 use std::process::ExitCode;
 use structopt::StructOpt;
 use telegram_bot::prelude::*;
-use telegram_bot::{Api, Error, UpdateKind};
+use telegram_bot::{Api, Error, MessageKind, UpdateKind};
 use words::Words;
 
 #[derive(StructOpt)]
@@ -40,6 +40,10 @@ async fn run(model: Model<String>, token: String) -> Result<(), Error> {
                     .collect::<String>();
 
                 api.send(message.chat.text(result)).await?;
+
+                if let MessageKind::Text { data, .. } = message.kind {
+                    println!("{}: {}", message.from.first_name, data);
+                }
             }
             _ => {}
         }
