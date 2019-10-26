@@ -1,5 +1,4 @@
 #![feature(process_exitcode_placeholder)]
-#![feature(async_closure)]
 mod model;
 mod words;
 
