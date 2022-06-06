@@ -10,5 +10,5 @@ edition = "2018"
 telegram-bot = { git = "https://github.com/telegram-rs/telegram-bot", rev = "9b514902f191f7dc0a76ba50486789092ee3f59c" }
 structopt = "0.3.3"
 rand = "0.7.2"
-tokio = "0.2.0-alpha.5"
+tokio = "1.8.4"
 futures-preview = "=0.3.0-alpha.19"
